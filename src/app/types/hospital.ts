@@ -20,9 +20,6 @@ export interface Hospital {
   dutyTime7c?: string | number;
   dutyTime8s?: string | number; 
   dutyTime8c?: string | number; 
-
-  wgs84Lon?: string;
-  wgs84Lat?: string;
 }
 
 export interface HospitalApiResponse {
