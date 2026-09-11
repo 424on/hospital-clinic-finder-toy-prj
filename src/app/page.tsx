@@ -31,6 +31,7 @@ export default function Home() {
   return (
     <main style={{ padding: 24, maxWidth: 720, margin: "0 auto" }}>
       <h1>병·의원 찾기</h1>
+      <h2>시도와 시군구를 입력하여 병·의원을 검색하세요.</h2>
 
       <div style={{ display: "flex", gap: 8, margin: "16px 0" }}>
         <input value={sido} onChange={(e) => setSido(e.target.value)} placeholder="시도" />
