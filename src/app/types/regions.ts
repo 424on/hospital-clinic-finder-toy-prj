@@ -1,6 +1,7 @@
 export interface Regions {
   dutyAddr: string; 
-  dutyName?: string | number;   
+  dutyName?: string | number;  
+  distance?: string | number; 
 }
 
 export interface RegionApiResponse {

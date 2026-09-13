@@ -53,6 +53,7 @@ export default function Region() {
             <br />
             {h.dutyAddr}
             <br />
+            {h.distance && <span>거리: {h.distance}m</span>}
           </li>
         ))}
       </ul>
