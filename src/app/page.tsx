@@ -12,6 +12,9 @@ export default function home() {
         <Link href="/hospitals/nearby">
           <h2>내 주변 병원 찾기</h2>
         </Link>
+        <Link href="/hospitals/info">
+          <h2>병원 ID로 찾기</h2>
+        </Link>
           <p>현재 위치 기준으로 가까운 병원을 찾습니다.</p>
     </div>
   )
