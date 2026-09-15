@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Regions, RegionApiResponse } from "../../types/regions";
 
-export default function Region() {
+export default function Nearby() {
   const [lat, setLat] = useState("37.5760");
   const [lon, setLon] = useState("126.9769");
   const [radius, setRadius] = useState("1000");
@@ -17,7 +17,7 @@ export default function Region() {
     setError("");
     try {
       const params = new URLSearchParams({ lon, lat, radius });
-      const res = await fetch(`/api/regions?${params.toString()}`);
+      const res = await fetch(`/api/nearby?${params.toString()}`);
       const data: RegionApiResponse = await res.json();
       console.log("응답:", data);
 
