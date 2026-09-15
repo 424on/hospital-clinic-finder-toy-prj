@@ -8,8 +8,8 @@ export async function GET(req: NextRequest) {
 
   const params = new URLSearchParams({
     serviceKey: process.env.HSPTLMDCNC_API_KEY!,
-    WGS84_LON: searchParams.get("lon") ?? "",
     WGS84_LAT: searchParams.get("lat") ?? "",
+    WGS84_LON: searchParams.get("lon") ?? "",
     Radius: searchParams.get("radius") ?? "",
     _type: "json",
   });

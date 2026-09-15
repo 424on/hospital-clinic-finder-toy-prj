@@ -16,7 +16,7 @@ export default function Region() {
     setError("");
     try {
       const params = new URLSearchParams({ sido, sigungu });
-      const res = await fetch(`/api/hospitals?${params.toString()}`);
+      const res = await fetch(`/api/region?${params.toString()}`);
       const data: HospitalApiResponse = await res.json();
 
       const items = data.response.body.items.item;

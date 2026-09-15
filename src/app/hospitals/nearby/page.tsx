@@ -4,8 +4,8 @@ import { useState } from "react";
 import type { Regions, RegionApiResponse } from "../../types/regions";
 
 export default function Region() {
-  const [lon, setLon] = useState("126.9769");
   const [lat, setLat] = useState("37.5760");
+  const [lon, setLon] = useState("126.9769");
   const [radius, setRadius] = useState("1000");
   const [regions, setRegions] = useState<Regions[]>([]);
   const [loading, setLoading] = useState(false);
@@ -36,8 +36,8 @@ export default function Region() {
       <h2>위치를 입력하여 근처 병·의원을 검색하세요.</h2>
 
       <div style={{ display: "flex", gap: 8, margin: "16px 0" }}>
-        <input value={lon} onChange={(e) => setLon(e.target.value)} placeholder="경도" />
         <input value={lat} onChange={(e) => setLat(e.target.value)} placeholder="위도" />
+        <input value={lon} onChange={(e) => setLon(e.target.value)} placeholder="경도" />
         <input value={radius} onChange={(e) => setRadius(e.target.value)} placeholder="반경(m)" />
         <button onClick={search} disabled={loading}>
           {loading ? "검색 중..." : "검색"}
