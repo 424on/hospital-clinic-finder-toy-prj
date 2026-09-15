@@ -17,7 +17,7 @@ export default function Info() {
     setError("");
     try {
       const params = new URLSearchParams({ hpid, pageNo, numOfRows });
-      const res = await fetch(`/api/infos?${params.toString()}`);
+      const res = await fetch(`/api/info?${params.toString()}`);
       const data: InfoApiResponse = await res.json();
       console.log("응답:", data);
 
