@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { Hospital, HospitalApiResponse } from "../../types/hospital";
+import type { Region, RegionApiResponse } from "../../types/region";
 import { getWeeklyHours, formatTime } from "../../utils/hospitalHours";
 
 export default function Region() {
   const [sido, setSido] = useState("서울특별시");
   const [sigungu, setSigungu] = useState("");
-  const [hospitals, setHospitals] = useState<Hospital[]>([]);
+  const [regions, setRegions] = useState<Region[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -17,10 +17,10 @@ export default function Region() {
     try {
       const params = new URLSearchParams({ sido, sigungu });
       const res = await fetch(`/api/region?${params.toString()}`);
-      const data: HospitalApiResponse = await res.json();
+      const data: RegionApiResponse = await res.json();
 
       const items = data.response.body.items.item;
-      setHospitals(Array.isArray(items) ? items : items ? [items] : []);
+      setRegions(Array.isArray(items) ? items : items ? [items] : []);
     } catch {
       setError("검색 중 오류가 발생했습니다.");
     } finally {
@@ -44,7 +44,7 @@ export default function Region() {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <ul>
-        {hospitals.map((h, i) => (
+        {regions.map((h, i) => (
           <li key={i} style={{ marginBottom: 12 }}>
             <strong>{h.dutyName}</strong>
             <br />

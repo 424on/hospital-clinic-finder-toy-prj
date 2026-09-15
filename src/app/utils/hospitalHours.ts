@@ -1,4 +1,4 @@
-import type { Hospital } from "../types/hospital";
+import type { Hospital } from "../types/region";
 
 export interface DailyHours {
   day: string;

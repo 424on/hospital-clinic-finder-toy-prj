@@ -1,5 +1,4 @@
-// types/hospital.ts
-export interface Hospital {
+export interface Region {
   dutyName: string;      
   dutyAddr: string;      
   dutyTel1: string;      
@@ -22,11 +21,11 @@ export interface Hospital {
   dutyTime8c?: string | number; 
 }
 
-export interface HospitalApiResponse {
+export interface RegionApiResponse {
   response: {
     header: { resultCode: string; resultMsg: string };
     body: {
-      items: { item: Hospital[] | Hospital };
+      items: { item: Region[] | Region };
       numOfRows: number;
       pageNo: number;
       totalCount: number;

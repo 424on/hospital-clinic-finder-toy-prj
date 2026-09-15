@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { Regions, RegionApiResponse } from "../../types/regions";
+import type { Nearby, NearbyApiResponse} from "../../types/nearby";
 
 export default function Nearby() {
   const [lat, setLat] = useState("37.5760");
   const [lon, setLon] = useState("126.9769");
   const [radius, setRadius] = useState("1000");
-  const [regions, setRegions] = useState<Regions[]>([]);
+  const [regions, setRegions] = useState<Nearby[]>([]);
   const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ export default function Nearby() {
     try {
       const params = new URLSearchParams({ lon, lat, radius });
       const res = await fetch(`/api/nearby?${params.toString()}`);
-      const data: RegionApiResponse = await res.json();
+      const data: NearbyApiResponse = await res.json();
       console.log("응답:", data);
 
       const items = data.response.body.items.item;

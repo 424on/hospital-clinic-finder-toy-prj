@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { Infos, InfoApiResponse } from "../../types/infos";
+import type { Info, InfoApiResponse } from "../../types/info";
 
 export default function Info() {
   const [hpid, setHpid] = useState("A1124291");
   const [pageNo, setPageNo] = useState("1");
   const [numOfRows, setNumOfRows] = useState("10");
-  const [infos, setInfos] = useState<Infos[]>([]);
+  const [infos, setInfos] = useState<Info[]>([]);
   const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState("");
